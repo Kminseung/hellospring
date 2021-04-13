@@ -10,6 +10,22 @@
 	<context:annotation-config />
 	<!-- 컴포넌트 자동 등록 사용
 		컴포넌트를 com.example.hellospring.controllers 패키지에서 찾아라 -->
-	<context:component-scan
-		base-package="com.example.hellospring.controllers" />
+	<context:component-scan base-package="com.example.hellospring.controllers" />
+	
+	<!-- Non Annotation 방식 : 객체를 수동으로 등록 -->
+	<!-- == NonAnnotationController naController = new NonAnnotationController(); -->
+	<!-- == SimpleUrlHandlerMapping urlMapping = new SimpleUrlHandlerMapping(); -->
+	<!-- == urlMapping.setMappings("/na", naController) -->
+	<!-- <bean id="naController" class="com.example.hellospring.controllers.NonAnnotationController"/>
+	
+	<bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	
+		<property name="mappings">
+			<props>
+				<prop key="/na">naController</prop>
+				
+			</props>
+		</property>
+	</bean> -->
+
 </beans>
