@@ -9,4 +9,27 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <!-- Spring Front Controller -->
+  <servlet>
+  	<servlet-name>spring</servlet-name>
+  	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  	<!-- Context 등록
+  	기본 명명 규칙: 서블릿이름-servlet.xml -->
+  	<!-- 기본 명명규칙을 지키지 않았을 경우
+  		init-param을 이용, 임의 등록 가능 -->
+  	<init-param>
+  		<param-name>contextConfigLocation</param-name>
+  		<param-value>/WEB-INF/spring-servlet.xml</param-value>
+  	</init-param>
+  </servlet>
+  
+  <!-- Servlet Mapping 
+  	Front Controller는 모든 요청을 다 받은 후에
+  	필요한 컨트롤러로 요청을 전달한다 -->
+  <servlet-mapping>
+  	<servlet-name>spring</servlet-name>
+  	<url-pattern>/</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
