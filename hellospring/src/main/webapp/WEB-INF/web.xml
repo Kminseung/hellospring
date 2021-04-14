@@ -32,4 +32,40 @@
   	<url-pattern>/</url-pattern>
   </servlet-mapping>
   
+  <!-- Listener 부착 Servlet 컨텍스트의 이벤트 감시, 초기화 작업 수행 -->
+  <listener>
+  	<listener-class>
+  		org.springframework.web.context.ContextLoaderListener
+  	</listener-class>
+  </listener>
+  
+  <!-- 기본적으로 Application Context 설정 파일 명은 /WEB-INF/applicationContext.xml -->
+  <!-- 기본 이름을 사용하지 않으려면 context-param으로 파일의 실제 위치를 지정 -->
+  <context-param>
+  	<param-name>contextConfiguration</param-name>
+  	<param-value>/WEB-INF/applicationContext.xml</param-value>
+  </context-param>
+  
+  <!-- Filter Setting -->
+  <filter>
+  	<filter-name>encodingFilter</filter-name>
+  	<filter-class>
+  		org.springframework.web.filter.CharacterEncodingFilter
+  	</filter-class>
+  	<!-- 필터 설정 -->
+  	<init-param>
+  		<param-name>encoding</param-name>
+  		<param-value>UTF-8</param-value>
+  	</init-param>
+  	
+  	<init-param>
+  		<param-name>forceEncoding</param-name>
+  		<param-value>true</param-value>
+  	</init-param>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>encodingFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
 </web-app>
