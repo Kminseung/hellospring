@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.example.hellospring.UserVo.UserVo;
+import com.example.hellospring.Vo.UserVo;
 
 // RequestMapping(Type + Method 매핑)
 @RequestMapping("/user")	// /usr url 패턴에 응답

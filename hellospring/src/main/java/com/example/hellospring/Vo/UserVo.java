@@ -1,4 +1,4 @@
-package com.example.hellospring.UserVo;
+package com.example.hellospring.Vo;
 
 public class UserVo {
 	// 필드
