@@ -14,7 +14,7 @@
 </style>
 </head>
 <body>
-	<form action="<%= request.getContextPath() %> /usr/join" method="POST">
+	<form action="<%= request.getContextPath() %>/user/join" method="POST">
 		<input type="text" name="name" placeholder="이름" />
 		<input type="text" name="email" placeholder="이메일" />
 		<input type="password" name="password" placeholder="비밀번호" />
